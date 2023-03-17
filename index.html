@@ -36,44 +36,64 @@
 
         <div id="form-section" class="section">
             <h2>Let's do this!</h2>
-            <form action="#" id="my-form">
+            <form action="#" id="my-form" method="post">
                 <div class="line">
                     <p id="first-name-para" class="form-field">
                         <label for="first-name">first name</label>
-                        <input required type="text" id="first-name">
+                        <input required type="text" id="first-name" name="first-name" minlength="2" pattern="[a-zA-Z\-\s]+" placeholder="John">
+                        <label id="first-error" class="error" for="first-name"></label>
                     </p>
                     <p id="last-name-para" class="form-field">
                         <label for="last-name">last name</label>
-                        <input required type="text" id="last-name">
+                        <input required type="text" id="last-name" name="last-name" minlength="2" pattern="[a-zA-Z\-\s]+" placeholder="Doe">
+                        <label id="last-error" class="error" for="last-name"></label>
                     </p>
                 </div>
                 <div class="line">
                     <p id="email-para" class="form-field">
                         <label for="email">email</label>
-                        <input required type="email" id="email">
+                        <input required type="email" id="email" name="email" placeholder="john.doe@mail.com">
+                        <label id="email-error" class="error" for="email"></label>
                     </p>
                     <p id="phone-number-para" class="form-field">
                         <label for="phone-number">phone number</label>
-                        <input required type="tel" id="phone-number">
+                        <input required type="tel" id="phone-number" name="phone-number" placeholder="+491234567890" pattern="[\+]\d{2}\d{10}">
+                        <label id="tel-error" class="error" for="phone-number"></label>
                     </p>
                 </div>
                 <div class="line">
                     <p id="password-para" class="form-field">
                         <label for="password">password</label>
-                        <input required type="password" id="password" class="password">
+                        <input required type="password" id="password" class="password" name="password" placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                        <label id="pw-error" class="error" for="password"></label>
                     </p>
                     <p id="password-confirm-para" class="form-field">
                         <label for="password-confirm">confirm password</label>
-                        <input required type="password" id="password-confirm" class="password">
+                        <input required type="password" id="password-confirm" class="password" name="password-confirm" placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                        <label id="pw-conf-error" class="error" for="password-confirm"></label>
                 </div>
                 </p>
             </form>
         </div>
 
         <div id="cta-section" class="section">
-            <button type="submit" id="cta-button" form="my-form">Create Account</button>
+            <input type="submit" id="cta-button" form="my-form" value="Create Account">
             <p id="cta-text">Already have an account? <a href="#">Log in</a></p>
         </div>
     </section>
+
+    <script>
+        const first_name = document.getElementById("first-name");
+        const first_error = document.getElementById("first-error");
+
+        first_name.addEventListener('keydown', (event) => {
+            if(first_name.textContent.length <= "2") {
+                first_error.textContent = "⚠️ Only use letters, space and '-'."
+                first_error.style.color = "red";
+            } else {
+                first_error.textContent = "";
+            }
+        })
+    </script>
 </body>
 </html>

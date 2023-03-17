@@ -100,27 +100,33 @@ body {
 }
 
 .line {
-    margin: 3vh 0;
+    margin: 2vh 0;
     display: flex;
-    gap: 5vw;
+    gap: 3vw;
 }
 
 .form-field {
     display: flex;
     flex-direction: column;
-    gap: 0.5vh;
+    gap: 0.125vh;
 }
 
 label {
     text-transform: uppercase;
-    font-size: smaller;
+    font-size: small;
+    opacity: .7;
 }
 
 input {
     width: calc((1/1.5) * var(--left-width));
     font-size: 1.5rem;
     border-radius: 5px;
-    border: 1px solid #E5E7EB
+    border: 1px solid #E5E7EB;
+    padding: 0.25rem 0.75rem;
+}
+
+.error {
+    font-size: 0.25rem;
 }
 
 input:focus {
