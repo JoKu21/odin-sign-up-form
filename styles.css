@@ -1,0 +1,56 @@
+/*Font for title section*/
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --logo-font: 'Golos Text', sans-serif;
+}
+
+h1 {
+    font-family: var(--tital-font);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+section {
+    border: 1px solid red;
+    background-color: lightgray;
+}
+
+#left-side {
+    width: calc((1/3) * 100vw);
+}
+
+#picture {
+    background-image: url(images/cocktail-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: calc((1/3) * 100vw);
+    height: 100vh
+}
+
+#logo-block {
+    position: relative;
+    background-color: yellow;
+    height: calc((1/8) * 100vh);
+    top: calc((1/5) * 100vh);
+
+}
+
+#right-side {
+    width: calc((2/3) * 100vw);
+}
+
+#right-side div {
+    border: 1px solid red;
+    height: calc((1/3) * 100vh);
+}
+
