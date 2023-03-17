@@ -1,16 +1,18 @@
-/*Font for title section*/
 *, *::before, *::after {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --logo-font: 'Golos Text', sans-serif;
-}
+    --logo-font: 'Golos', sans-serif;
+    --left-width: calc((1/3) * 100vw);
+    --right-hight: calc((1/3) * 100vh);
+    --right-bc-top-bot: rgb(240, 239, 239);
+    --left-color: white;
+    --button-color: rgb(72, 92, 55);
 
-h1 {
-    font-family: var(--tital-font);
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -19,38 +21,143 @@ body {
     display: flex;
 }
 
-section {
-    border: 1px solid red;
-    background-color: lightgray;
-}
-
+/*left side*/
 #left-side {
-    width: calc((1/3) * 100vw);
+    width: var(--left-width);
+    min-width: 22rem;
 }
 
 #picture {
-    background-image: url(images/cocktail-background.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url(images/nature.png);
+    background-repeat:no-repeat;
     background-size: cover;
-    max-width: calc((1/3) * 100vw);
-    height: 100vh
+    background-position: center;
+    height: 100vh;
 }
 
 #logo-block {
-    position: relative;
-    background-color: yellow;
-    height: calc((1/8) * 100vh);
-    top: calc((1/5) * 100vh);
-
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    height: calc((1/6) * 100vh);
+    width: var(--left-width);
+    top: calc((1/6) * 100vh);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3vh 0;
+    padding-right: 2rem;
 }
 
+#logo-title {
+    color: var(--left-color);
+    font-size: 3rem;
+    font-family: var(--logo-font);
+}
+
+#credit {
+    position: absolute;
+    bottom: 0;
+    color: var(--left-color);
+}
+
+#credit-text {
+    width: var(--left-width);
+    text-align: center;
+    padding: 1rem;
+}
+
+#credit a {
+    color: var(--left-color);
+}
+
+
+/*right side*/
 #right-side {
     width: calc((2/3) * 100vw);
+    min-width: 30rem;
+    height: 100vh;
 }
 
-#right-side div {
+.section {
+    height: var(--right-hight);
+    background-color: var(--right-bc-top-bot);
+    padding: 0 5vw;
+}
+
+/*1st section*/
+#heading-section {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: calc((1/3) * var(--right-hight));
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+/*2nd section*/
+#form-section {
+    background-color: var(--left-color);
+    padding-top: 2vh;
+}
+
+.line {
+    margin: 3vh 0;
+    display: flex;
+    gap: 5vw;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: smaller;
+}
+
+input {
+    width: calc((1/1.5) * var(--left-width));
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid #E5E7EB
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: 2px 2px lightgray;
+}
+
+.password{
     border: 1px solid red;
-    height: calc((1/3) * 100vh);
+}
+
+/*3rd section*/
+#cta-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    padding-top: 5vh;
+}
+
+#cta-button {
+    background-color: var(--button-color);
+    color: var(--left-color);
+    min-width: calc((1/6) * 100vw);
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem 1rem;
+    box-shadow: 2px 2px 2px grey;
+}
+
+#cta-text {
+    font-weight: bold;
+}
+
+#cta-text a {
+    color: rgb(77, 77, 77);
+    text-decoration: none;
 }
 

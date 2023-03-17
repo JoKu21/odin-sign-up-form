@@ -14,17 +14,66 @@
     <section id="left-side">
         <div id="picture">
             <div id="logo-block">
-                <img src="images/CocktailGlass_update.png" alt="logo">
-                <p></p>
+                <img src="images/backpacker.svg" alt="logo" id="logo">
+                <div id="logo-block-text">
+                    <h1 id="logo-title">Backpacker<br>Joe</h1>
+                </div>
+            </div>
+            <div id="credit">
+                <p id="credit-text">
+                    Picture by <a href="https://unsplash.com/@colefreeman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cole Freeman</a> on <a href="https://unsplash.com/de/fotos/NrSNAdapVHc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+                </p>
             </div>
         </div>
         <p></p>
     </section>
 
     <section id="right-side">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div id="heading-section" class="section">
+            <p id="heading-story">This is not a real online service! If you want to be part of the nature and find your inner self, you <em>need</em> to become member of <em>Backpacker Joe</em>.</p>
+            <p id="heading-cta">Let's go and <em>start</em> your journey <em>now</em>!</p>
+        </div>
+
+        <div id="form-section" class="section">
+            <h2>Let's do this!</h2>
+            <form action="#" id="my-form">
+                <div class="line">
+                    <p id="first-name-para" class="form-field">
+                        <label for="first-name">first name</label>
+                        <input required type="text" id="first-name">
+                    </p>
+                    <p id="last-name-para" class="form-field">
+                        <label for="last-name">last name</label>
+                        <input required type="text" id="last-name">
+                    </p>
+                </div>
+                <div class="line">
+                    <p id="email-para" class="form-field">
+                        <label for="email">email</label>
+                        <input required type="email" id="email">
+                    </p>
+                    <p id="phone-number-para" class="form-field">
+                        <label for="phone-number">phone number</label>
+                        <input required type="tel" id="phone-number">
+                    </p>
+                </div>
+                <div class="line">
+                    <p id="password-para" class="form-field">
+                        <label for="password">password</label>
+                        <input required type="password" id="password" class="password">
+                    </p>
+                    <p id="password-confirm-para" class="form-field">
+                        <label for="password-confirm">confirm password</label>
+                        <input required type="password" id="password-confirm" class="password">
+                </div>
+                </p>
+            </form>
+        </div>
+
+        <div id="cta-section" class="section">
+            <button type="submit" id="cta-button" form="my-form">Create Account</button>
+            <p id="cta-text">Already have an account? <a href="#">Log in</a></p>
+        </div>
     </section>
 </body>
 </html>
