@@ -64,12 +64,12 @@
                 <div class="line">
                     <p id="password-para" class="form-field">
                         <label for="password">password</label>
-                        <input required type="password" id="password" class="password" name="password" placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                        <input required type="password" id="password" class="password" name="password" placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" value="">
                         <label id="pw-error" class="error" for="password"></label>
                     </p>
                     <p id="password-confirm-para" class="form-field">
                         <label for="password-confirm">confirm password</label>
-                        <input required type="password" id="password-confirm" class="password" name="password-confirm" placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                        <input required type="password" id="password-confirm" class="password" name="password-confirm" placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" value="">
                         <label id="pw-conf-error" class="error" for="password-confirm"></label>
                 </div>
                 </p>
@@ -77,23 +77,16 @@
         </div>
 
         <div id="cta-section" class="section">
-            <input type="submit" id="cta-button" form="my-form" value="Create Account">
+            <input type="submit" id="cta-button" form="my-form" value="Create Account" >
             <p id="cta-text">Already have an account? <a href="#">Log in</a></p>
         </div>
     </section>
 
-    <script>
-        const first_name = document.getElementById("first-name");
-        const first_error = document.getElementById("first-error");
-
-        first_name.addEventListener('keydown', (event) => {
-            if(first_name.textContent.length <= "2") {
-                first_error.textContent = "⚠️ Only use letters, space and '-'."
-                first_error.style.color = "red";
-            } else {
-                first_error.textContent = "";
-            }
-        })
+    <script> 
+        
+        //Ich muss herausfinden, wie ich den Value-Wert des PW-Feldes überprüfen kann.
+        //https://da-software.net/2021/04/html-passwortfeld-ueberpruefen-auf-gleiche-passworteingabe/
+        
     </script>
 </body>
 </html>
