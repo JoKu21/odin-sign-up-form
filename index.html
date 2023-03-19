@@ -64,12 +64,12 @@
                 <div class="line">
                     <p id="password-para" class="form-field">
                         <label for="password">password</label>
-                        <input required type="password" id="password" class="password" name="password" placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" value="">
+                        <input required type="password" id="password" class="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" value="">
                         <label id="pw-error" class="error" for="password"></label>
                     </p>
                     <p id="password-confirm-para" class="form-field">
                         <label for="password-confirm">confirm password</label>
-                        <input required type="password" id="password-confirm" class="password" name="password-confirm" placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" value="">
+                        <input required type="password" id="password-confirm" class="password" name="password-confirm" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" value="">
                         <label id="pw-conf-error" class="error" for="password-confirm"></label>
                 </div>
                 </p>
@@ -83,9 +83,23 @@
     </section>
 
     <script> 
-        
-        //Ich muss herausfinden, wie ich den Value-Wert des PW-Feldes überprüfen kann.
-        //https://da-software.net/2021/04/html-passwortfeld-ueberpruefen-auf-gleiche-passworteingabe/
+
+        const pw_check = document.getElementById("password-confirm");
+        pw_check.addEventListener('keyup', checkPasswords);
+
+        //Check if pw1 = pw2
+        function checkPasswords() {
+            let pw1 = document.getElementById("password").value;
+            let pw2 = document.getElementById("password-confirm").value;
+            
+            if(pw1 != pw2) {
+                document.getElementById('password-confirm').style.borderColor = "red";
+                document.getElementById('password-confirm').style.borderWidth = "5px";
+            } else {
+                document.getElementById('password-confirm').style.borderColor = "green";
+                document.getElementById('password-confirm').style.borderWidth = "5px";
+            }
+        }
         
     </script>
 </body>
